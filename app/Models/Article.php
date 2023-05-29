@@ -13,9 +13,9 @@ class Article extends Model
     protected  $table = 'article';
     protected  $fillable = ['title','content','date_pub'];
 
-    public function commantaire()
+    public function comments()
     {
-        return $this->hasMany(commantaire::class);
+        return $this->hasMany(Comment::class);
     }
 
 }

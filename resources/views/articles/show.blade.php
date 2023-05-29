@@ -13,6 +13,14 @@
     @endif
             <button class="btn btn-outline-secondary"><a class="text-decoration-none text-dark" href="/">Go Back </a></button>
         </div>
+        <div>
+            <h4>Comments:</h4>
+            <ul>
+                @foreach ($comments as $comment)
+                    <li>{{ $comment->content }}</li>
+                @endforeach
+            </ul>
+        </div>
         </hr>
     </div>
 </div>

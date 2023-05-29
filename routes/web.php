@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ use App\Http\Controllers\CommentaireController;
 Route::get('/', [ArticleController::class, 'index']);
 
 Route::resource('article', ArticleController::class);
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');

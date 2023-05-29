@@ -14,9 +14,11 @@
                         <br/>
                         <br/>
                             <div class="row ">
-                                @foreach($articles as $item)
+                                
+                            @foreach($articles as $item)
                                 <div class="col-md-4  ">
                                     <div class="card  cart2 d-flex position-relative w-100"  >
+                                    
                                         <div class="card-body">
                                             <h3>{{$item->title}}</h3>
                                             <p>{{$item->content}}</p>
@@ -32,17 +34,18 @@
                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Student"  >Delete</button>
                                                 </form>
                                             </div>
-                                            @csrf
-
-                                                <input type="text" name="content" id="content" class="form-control" placeholder="Add Comment"></br>  
-                                                <input type="submit" value="Save"  class="btn btn-success">
+                                            <form action="{{ route('comments.store') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="article_id" value="{{ $item->id }}">
+                                                <input   class="form-control" name="content"type="text" placeholder="Enter your comment"> <br>  
+                                                <button class="btn btn-success btn-sm" type="submit" class="">Submit</button>
                                             </form>
                                         </div>
                                         
-                               
                                     </div>
                                 </div>
-                            @endforeach
+                                
+                                @endforeach 
                             </div>
                     </div>
                 </div>
