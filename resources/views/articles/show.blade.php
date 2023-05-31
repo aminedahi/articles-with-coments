@@ -13,11 +13,23 @@
     @endif
             <button class="btn btn-outline-secondary"><a class="text-decoration-none text-dark" href="/">Go Back </a></button>
         </div>
-        <div>
+        <div class="j">
             <h4>Comments:</h4>
-            <ul>
+            <ul class="pp">
                 @foreach ($comments as $comment)
+                <div class="parateny">
+                <div class="div">
+                        
                     <li>{{ $comment->content }}</li>
+                </div>
+                <div>
+                    <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this comment?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-primary">Delete</button>
+                    </form>
+                </div>
+                </div>
                 @endforeach
             </ul>
         </div>

@@ -15,9 +15,11 @@ use App\Http\Controllers\CommentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
 
 Route::get('/', [ArticleController::class, 'index']);
 
 Route::resource('article', ArticleController::class);
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+

@@ -25,11 +25,23 @@
             flex-direction: row;
             gap: 3px;
         }
+        .pp{
+            display: flex;
+            flex-direction: column;
+        }
+        .parateny{
+        
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        ul{
+            list-style: none;
+        }
     
     </style>
 </head>
 <body>
-    
     <div class="container">
         @yield('content')
     </div>

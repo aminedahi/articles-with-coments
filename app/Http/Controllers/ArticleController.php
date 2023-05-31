@@ -10,8 +10,6 @@ class ArticleController extends Controller
 {
     function index(){
         $articles = Article::all(); 
-        // $articles = Article::with('commantaire')->get();
-        // $Commantaires = $articles->commantaires;
         return view ('articles.index',compact('articles'));
     }
     function create(){
@@ -21,16 +19,13 @@ class ArticleController extends Controller
     {
         $input = $request->all();
         Article::create($input);
-
         return redirect('article')->with('flash_message', 'article Addedd!');
     }
     public function show(string $id): View
     {
         $articles = Article::find($id);
         $comments = $articles->comments;
-    
         return view('articles.show', compact('articles', 'comments'));
-  
     }
     public function edit(string $id): View
     {
