@@ -43,5 +43,4 @@ class ArticleController extends Controller
     {
         Article::destroy($id);
         return redirect('article')->with('flash_message', 'article deleted!');
-    }
-};
+    }};

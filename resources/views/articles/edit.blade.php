@@ -5,7 +5,8 @@
     <div class="card-body">
         <form action="{{ url('article/' .$articles->id) }}" method="post">
             {!! csrf_field() !!}
-            @method("PATCH")
+            @method("PUT")
+            
             <label>title</label></br>
             <input type="text" name="title" id="title" value="{{$articles->title}}" class="form-control"></br>
             <label>content</label></br>

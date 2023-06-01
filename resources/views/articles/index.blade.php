@@ -14,7 +14,6 @@
                         <br/>
                         <br/>
                             <div class="row ">
-                                
                             @foreach($articles as $item)
                                 <div class="col-md-4  ">
                                     <div class="card  cart2 d-flex position-relative w-100"  >
@@ -34,7 +33,7 @@
                                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Student"  >Delete</button>
                                                 </form>
                                             </div>
-                                            <form action="{{ route('comments.store') }}" method="POST">
+                                            <form action="{{ url('comments') }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="article_id" value="{{ $item->id }}">
                                                 <input   class="form-control" name="content"type="text" placeholder="Enter your comment"> <br>  
